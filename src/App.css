@@ -1,0 +1,85 @@
+/*body {
+  height: 100vh;
+}*/
+
+#sidebar {
+  /*width: 300px;*/
+  height: 100vh;
+  margin: 5px 0px 0 5px;
+  padding-right: 50px;
+  float: left;
+  border-right: 1px solid black;
+}
+/*------------------------------------------------*/
+#addtag-form {
+  height: 30px;
+  margin-bottom: 10px;
+}
+#addtag-form input {
+  border: 1px solid black;
+  height: 30px;
+  width: 200px;
+  font-size: 16px;
+}
+#addtag-form button {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  font-size: 16px;
+}
+/*------------------------------------------------*/
+#tags-container {
+}
+.tags {
+  color: gray;
+  cursor: pointer;
+}
+.tags:hover {
+  color: black;
+}
+.active-tag {
+  color: black;
+  font-weight: bold;
+}
+/*------------------------------------------------*/
+#mainbar {
+  float: left;
+  margin: 5px 0 0 0;
+  padding-left: 50px;
+}
+/*------------------------------------------------*/
+#addtodo-form {
+  float: left;
+}
+#addtodo-form input {
+  border: 1px solid black;
+  height: 30px;
+  width: 200px;
+  font-size: 16px;
+}
+#addtodo-form button {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  font-size: 16px;
+}
+#checkbox {
+  float: left;
+}
+#todos {
+  clear: both;
+}
+.todo {
+  cursor: pointer;
+  color: gray;
+}
+.todo:hover {
+  color: black
+}
+.completed-todo {
+  text-decoration: line-through;
+}
