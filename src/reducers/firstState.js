@@ -1,18 +1,18 @@
 export const firstTags = [
   {
-    "name": "All",
-    "active": true
+    title: "All",
+    path: "/todo/all",
   },
   {
-    "name": "Shopping List",
-    "active": false
+    title: "Buy List",
+    path: "/todo/buy-list"
   },
   {
-    "name": "Work",
-    "active": false
+    title: "Work",
+    path: "/todo/work"
   },
   {
-    "name": "Home",
-    "active": false
+    title: "Home",
+    path: "/todo/home"
   },
 ];

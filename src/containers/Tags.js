@@ -1,52 +1,34 @@
 import { connect } from 'react-redux';
-import TagsC from '../components/TagsC';
+import TagsComponent from '../components/TagsComponent';
 
-const myTags = (tags) => {
-  return tags.map(t => {
-    if(t.active) {
-      return {
-        "name": t.name,
-        "class": "tags active-tag"
-      };
-    } else {
-      return {
-        "name": t.name,
-        "class": "tags"
-      };
-    }
-  })
+const getNumber = (todo, tag) => {
+  return todo.reduce((num, x) => {
+    console.log(x)
+    return (tag.title === x.tag || tag.title === 'All') && !x.completed ? num + 1 : num;
+  }, 0);
 };
 
+const number = (todos, tags) => {
+  return tags.map(t => ({
+      ...t,
+      count: getNumber(todos, t) || ''
+    }));
+};
+
+
+
 const mapStateToProps = (state) => ({
-  tags: myTags(state.tags)
+  tags: number(state.todos, state.tags)
 });
 const mapDispatchToProps = ({
   addTag: (name) => ({
     'type': 'ADD_TAG',
     name
   }),
-  activeTag: (name) => ({
-      'type': 'ACTIVE_TAG',
-      name
-    }),
+
 });
-// const mapDispatchToProps = (dispatch) => ({
-//   addTag: (name) => {
-//     dispatch({
-//       'type': 'ADD_TAG',
-//       name
-//     });
-//   },
-//   activeTag: (name) => {
-//     dispatch({
-//       'type': 'ACTIVE_TAG',
-//       name
-//     });
-//   },
-// });
 
 
-
-const Tags = connect(mapStateToProps, mapDispatchToProps)(TagsC);
+const Tags = connect(mapStateToProps, mapDispatchToProps)(TagsComponent);
 
 export default Tags;
