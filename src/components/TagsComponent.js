@@ -18,7 +18,7 @@ const TagsComponent = (props) => {
 
       <div id="tags-container">
         {tags.map((t, i) =>
-          <TagLink key={i} title={t.title} path={t.path} active={t.path===match.url}/>
+          <TagLink key={i} count={t.count} title={t.title} path={t.path} active={t.path===match.url}/>
         )}
       </div>
 

@@ -1,20 +1,32 @@
+#app-container {
+  display: flex;
+  margin: 6px 0
+}
 
 #sidebar {
   height: 100vh;
+  width: 280px;
   margin: 5px 0px 0 5px;
-  padding-right: 50px;
+  padding-right: 30px;
   float: left;
   border-right: 1px solid black;
+}
+#main-container {
+  flex: 1;
+  margin: 5px 0 0 0;
+  padding-left: 30px;
+  display: flex
 }
 /*------------------------------------------------*/
 #addtag-form {
   height: 30px;
   margin-bottom: 10px;
+  display: flex;
 }
 #addtag-form input {
   border: 1px solid black;
   height: 30px;
-  width: 200px;
+  flex: 1;
   font-size: 15px;
   padding: 1px 5px
 }
@@ -27,7 +39,8 @@
   font-size: 16px;
 }
 /*------------------------------------------------*/
-#tags-container {
+#list-container {
+  margin: 1px;
 }
 .tags {
   color: gray;
@@ -41,21 +54,31 @@
   color: black;
   font-weight: bold;
 }
+#list-counter {
+  float: right;
+}
+
 /*------------------------------------------------*/
 #mainbar {
-  float: left;
-  margin: 5px 0 0 0;
-  padding-left: 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+/*------------------------------------------------*/
+#addtodo-container {
+  display: flex;
 }
 /*------------------------------------------------*/
 #addtodo-form {
-  float: left;
+  flex: 1;
+  display: flex;
 }
 #addtodo-form input {
+  flex: 1;
   border: 1px solid black;
   height: 30px;
-  width: 200px;
-  font-size: 16px;
+  font-size: 15px;
+  padding: 1px 5px
 }
 #addtodo-form button {
   cursor: pointer;
@@ -65,11 +88,41 @@
   width: 30px;
   font-size: 16px;
 }
-#checkbox {
-  float: left;
+#checkbox-container {
+  /*float: right;*/
+  height: 30px;
+  display: flex;
+  margin: 0 15px;
+
 }
+#checkbox-container div {
+  margin: auto;
+}
+#checkbox-container div label {
+  cursor: pointer;
+}
+#checkbox-container div input {
+  margin-left: 5px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+/*------------------------------------------------*/
 #todos {
   clear: both;
+  margin-top: 12px;
+  padding-bottom: 10px;
+}
+#not-completed-todo {
+}
+#not-completed-todo .todo-container:first-child {
+  padding-top: 10px;
+  border-top: 1px solid gray;
+}
+.todo-container {
+  margin: 2px 0
 }
 .todo {
   cursor: pointer;

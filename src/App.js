@@ -8,9 +8,11 @@ import Todos from './containers/Todos';
 const App = (props) => {
   return (
     <Router>
-      <div>
+      <div id="app-container">
         <Route component={Tags} />
-        <Route path="/todo/:tag" component={Todos} />
+        <div id="main-container">
+          <Route path="/todo/:tag" component={Todos} />
+        </div>
       </div>
     </Router>
   );
