@@ -1,8 +1,12 @@
 import React from 'react';
 
-const TodosC = ({ filter, toggleFilter, notCompletedTodos, completedTodos, addTodo, tag, complete }) => {
+const TodosC = ( props ) => {
   let input;
-  console.log(notCompletedTodos);
+  console.log(props);
+  const { filter, todos, tag, toggleFilter, addTodo, complete } = props;
+  // const show = (t) => {
+  //   t.map((x, i) => )
+  // }
   return(
     <div id="mainbar">
 
@@ -19,16 +23,25 @@ const TodosC = ({ filter, toggleFilter, notCompletedTodos, completedTodos, addTo
 
       <div id="todos">
 
-        {notCompletedTodos.map((x, i) =>
-        <div className="todo-container" key={i}>
-          <span className="todo" onClick={() => complete(x.id)}>{x.text}</span>
-        </div>)}
-
-        {filter ? completedTodos.map((x, i) =>
+        {todos.filter(x => !x.completed).map((x, i) =>
           <div className="todo-container" key={i}>
-            <span className="todo completed-todo" onClick={() => complete(x.id)}>{x.text}</span>
-          </div>):<div></div>}
-          
+            <span className="todo" onClick={() => complete(x.id)}>{x.text}</span>
+          </div>
+        )}
+
+        {filter ? todos.filter(x => x.completed).map((x, i) =>
+          <div className="todo-container" key={i}>
+            <span
+              className="todo"
+              style={{textDecoration: 'line-through'}}
+              onClick={() => complete(x.id)}
+            >
+              {x.text}
+            </span>
+          </div>
+        ): <div></div>}
+
+
       </div>
 
 

@@ -1,40 +1,18 @@
 import { connect } from 'react-redux';
 import TodosC from '../components/TodosC';
 
-const activeTag = (tags) => {
-  return tags.find(t => t.active).name;
+const currentTag = (tags, match) => {
+  return tags.find(x => x.path === match.url).title
 };
 
-const tagTodos = (todos, activeTag) => {
-  if (activeTag === 'All') {
-    return todos;
-  } else {
-    return todos.filter(t => t.tag === activeTag)
-  }
-};
-const notCompletedTodos = (tagTodos) => {
-  return tagTodos.filter(t => !t.completed);
+const tagTodos = (tag, todos) => {
+  return todos.filter(x => x.tag === tag || tag === 'All')
 };
 
-const completedTodos = (tagTodos) => {
-  return tagTodos.filter(t => t.completed);
-};
-
-// const visibleTodos = (notCompletedTodos, completedTodos, filter) => {
-//   const v = [];
-//   if(!filter) {
-//     v[0] = notCompletedTodos;
-//   } else {
-//     v[1] = completedTodos;
-//   }
-//   return v;
-// };
-
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, props) => ({
   filter: state.filter,
-  notCompletedTodos: notCompletedTodos(tagTodos(state.todos, activeTag(state.tags))),
-  completedTodos: completedTodos(tagTodos(state.todos, activeTag(state.tags))),
-  tag: activeTag(state.tags)
+  tag: currentTag(state.tags, props.match),
+  todos: tagTodos(currentTag(state.tags, props.match), state.todos)
 });
 
 let nextTodoId = 0;
