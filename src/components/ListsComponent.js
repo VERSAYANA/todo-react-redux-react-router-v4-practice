@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TagLink from './TagLink';
+import ListLink from './ListLink';
 
-const TagsComponent = (props) => {
-  const { tags, addTag, activeTag, match } = props;
+const ListsComponent = (props) => {
+  const { lists, addTag, activeTag, match } = props;
   let input;
   return(
     <div id="sidebar">
-      <form id="addtag-form"
+      <form id="addlist-form"
         onSubmit={(e) =>{
           e.preventDefault(); addTag(input.value);input.value=''
         }
@@ -16,9 +16,9 @@ const TagsComponent = (props) => {
         <button type="submit">+</button>
       </form>
 
-      <div id="tags-container">
-        {tags.map((t, i) =>
-          <TagLink key={i} count={t.count} title={t.title} path={t.path} active={t.path===match.url}/>
+      <div id="lists-container">
+        {lists.map((t, i) =>
+          <ListLink key={i} count={t.count} title={t.title} path={t.path} active={t.path===match.url}/>
         )}
       </div>
 
@@ -27,4 +27,4 @@ const TagsComponent = (props) => {
 
 };
 
-export default TagsComponent;
+export default ListsComponent;

@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import TodosC from '../components/TodosC';
+import TodosComponent from '../components/TodosComponent';
 
-const currentTag = (tags, match) => {
-  return tags.find(x => x.path === match.url).title
+const currentTag = (lists, match) => {
+  return lists.find(x => x.path === match.url).title
 };
 
-const tagTodos = (tag, todos) => {
-  return todos.filter(x => x.tag === tag || tag === 'All')
+const listTodos = (list, todos) => {
+  return todos.filter(x => x.list === list || list === 'All')
 };
 
 const mapStateToProps = (state, props) => ({
   filter: state.filter,
-  tag: currentTag(state.tags, props.match),
-  todos: tagTodos(currentTag(state.tags, props.match), state.todos)
+  list: currentTag(state.lists, props.match),
+  todos: listTodos(currentTag(state.lists, props.match), state.todos)
 });
 
 let nextTodoId = 0;
@@ -21,10 +21,10 @@ const mapDispatchToProps = ({
   toggleFilter: () => ({
     'type': 'TOGGLE_FILTER'
   }),
-  addTodo: (text, tag) => ({
+  addTodo: (text, list) => ({
     'type': 'ADD_TODO',
     text,
-    tag,
+    list,
     'id': nextTodoId++
   }),
   complete: (id) => ({
@@ -33,6 +33,6 @@ const mapDispatchToProps = ({
   })
 });
 
-const Todos = connect(mapStateToProps, mapDispatchToProps)(TodosC);
+const Todos = connect(mapStateToProps, mapDispatchToProps)(TodosComponent);
 
 export default Todos;

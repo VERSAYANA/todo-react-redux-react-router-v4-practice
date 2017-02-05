@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 
-const TagLink = (props) => {
+const ListLink = (props) => {
   const { title, path, active, count } = props;
-  const style = active ? 'tags active-tag' : 'tags'
+  const style = active ? 'lists active-list' : 'lists'
   return (
     <div id="list-container">
       <Link to={path} className={style}>
@@ -15,4 +15,4 @@ const TagLink = (props) => {
   );
 }
 
-export default TagLink;
+export default ListLink;

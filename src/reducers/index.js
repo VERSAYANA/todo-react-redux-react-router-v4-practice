@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import todos from './todos';
-import tags from './tags';
+import lists from './lists';
 import filter from './filter';
 
 const index = combineReducers({
   todos,
-  tags,
+  lists,
   filter
 });
 

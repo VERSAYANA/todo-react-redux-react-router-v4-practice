@@ -18,19 +18,19 @@
   display: flex
 }
 /*------------------------------------------------*/
-#addtag-form {
+#addlist-form {
   height: 30px;
   margin-bottom: 10px;
   display: flex;
 }
-#addtag-form input {
+#addlist-form input {
   border: 1px solid black;
   height: 30px;
   flex: 1;
   font-size: 15px;
   padding: 1px 5px
 }
-#addtag-form button {
+#addlist-form button {
   cursor: pointer;
   background-color: white;
   border: 1px solid black;
@@ -42,15 +42,15 @@
 #list-container {
   margin: 1px;
 }
-.tags {
+.lists {
   color: gray;
   cursor: pointer;
   text-decoration: none
 }
-.tags:hover {
+.lists:hover {
   color: black;
 }
-.active-tag {
+.active-list {
   color: black;
   font-weight: bold;
 }

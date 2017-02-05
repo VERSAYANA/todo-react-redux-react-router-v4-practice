@@ -1,14 +1,14 @@
 import React from 'react';
 
-const TodosC = ( props ) => {
+const TodosComponent = ( props ) => {
   let input;
-  const { filter, todos, tag, toggleFilter, addTodo, complete } = props;
+  const { filter, todos, list, toggleFilter, addTodo, complete } = props;
 
   return (
     <div id="mainbar">
       <div id="addtodo-container">
         <form id="addtodo-form"
-          onSubmit={(e) => {e.preventDefault(); addTodo(input.value, tag);input.value=''}}>
+          onSubmit={(e) => {e.preventDefault(); addTodo(input.value, list);input.value=''}}>
           <input placeholder="Add New Todo" ref={(node) => input=node}></input>
           <button type="submit">+</button>
         </form>
@@ -53,4 +53,4 @@ const TodosC = ( props ) => {
   )
 };
 
-export default TodosC;
+export default TodosComponent;

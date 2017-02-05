@@ -1,18 +1,18 @@
-export const firstTags = [
+export const firstLists = [
   {
     title: "All",
-    path: "/todo/all",
+    path: "/list/all",
   },
   {
     title: "Buy List",
-    path: "/todo/buy-list"
+    path: "/list/buy-list"
   },
   {
     title: "Work",
-    path: "/todo/work"
+    path: "/list/work"
   },
   {
     title: "Home",
-    path: "/todo/home"
+    path: "/list/home"
   },
 ];
