@@ -1,12 +1,26 @@
+
+body {
+  margin: 0;
+  padding: 5px 6px;
+  font-family: sans-serif;
+  height: 100vh;
+  min-width: 850px;
+
+}
+#root {
+  height: 100%;
+
+}
+
 #app-container {
   display: flex;
-  margin: 6px 0
+  height: 100%;
+  /*overflow: hidden;*/
 }
 
 #sidebar {
-  height: 100vh;
   width: 280px;
-  margin: 5px 0px 0 5px;
+  margin: 5px 0px 0 7px;
   padding-right: 30px;
   float: left;
   border-right: 1px solid black;
@@ -15,12 +29,12 @@
   flex: 1;
   margin: 5px 0 0 0;
   padding-left: 30px;
-  display: flex
+  display: flex;
 }
 /*------------------------------------------------*/
 #addlist-form {
   height: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: flex;
 }
 #addlist-form input {
@@ -34,18 +48,35 @@
   cursor: pointer;
   background-color: white;
   border: 1px solid black;
+  border-left: none;
   height: 30px;
   width: 30px;
   font-size: 16px;
 }
 /*------------------------------------------------*/
 #list-container {
-  margin: 1px;
+  margin: 8px 1px;
+  display: flex;
+  flex-direction: column;
+}
+#list-item {
+  display: flex;
+}
+#delete-list {
+  color: gray;
+  cursor: pointer;
+}
+#list-item .lists:first-child {
+  margin-left: 20px;
+}
+#delete-list:hover {
+  color: black
 }
 .lists {
   color: gray;
   cursor: pointer;
-  text-decoration: none
+  text-decoration: none;
+  margin-left: 10px;
 }
 .lists:hover {
   color: black;
@@ -84,6 +115,7 @@
   cursor: pointer;
   background-color: white;
   border: 1px solid black;
+  border-left: none;
   height: 30px;
   width: 30px;
   font-size: 16px;

@@ -1,7 +1,7 @@
 import React from "react";
 import ListLink from "./ListLink";
 
-const ListsComponent = ({ lists, addTag, match }) => {
+const ListsComponent = ({ lists, createList, match, deleteList, replace }) => {
   let input;
   return (
     <div id="sidebar">
@@ -9,7 +9,7 @@ const ListsComponent = ({ lists, addTag, match }) => {
         id="addlist-form"
         onSubmit={e => {
           e.preventDefault();
-          addTag(input.value);
+          createList(input.value);
           input.value = "";
         }}
       >
@@ -24,6 +24,8 @@ const ListsComponent = ({ lists, addTag, match }) => {
             count={t.count}
             title={t.title}
             path={t.path}
+            deleteList={deleteList}
+            replace={replace}
             active={t.path === match.url}
           />
         ))}

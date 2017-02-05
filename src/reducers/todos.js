@@ -30,6 +30,9 @@ const todos = (state = [], action) => {
     case "COMPLETE_TODO":
       return state.map(t => todo(t, action));
 
+    case "DELETE_LIST":
+      return state.filter(x => x.list !== action.title)
+
     default:
       return state;
 

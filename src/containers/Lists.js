@@ -23,9 +23,13 @@ const mapStateToProps = state => ({
   lists: number(state.todos, state.lists)
 });
 const mapDispatchToProps = {
-  addTag: name => ({
+  createList: title => ({
     type: "CREATE_LIST",
-    name
+    title
+  }),
+  deleteList: title => ({
+    type: "DELETE_LIST",
+    title
   })
 };
 
