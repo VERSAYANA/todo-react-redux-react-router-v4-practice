@@ -1,7 +1,7 @@
 export const firstLists = [
   {
     title: "All",
-    path: "/list/all",
+    path: "/list/all"
   },
   {
     title: "Buy List",
@@ -14,5 +14,5 @@ export const firstLists = [
   {
     title: "Home",
     path: "/list/home"
-  },
+  }
 ];
